@@ -1,0 +1,2 @@
+* * * * * echo "Cron job executed." >> /Users/danielgavidia/Documents/projects/fractal-bootcamp/fractal-cron-job/cron.log 2>&1
+* * * * * /Users/danielgavidia/.bun/bin/bun /Users/danielgavidia/Documents/projects/fractal-bootcamp/fractal-cron-job/nodemailer.ts >> /Users/danielgavidia/Documents/projects/fractal-bootcamp/fractal-cron-job/cron.log 2>&1
