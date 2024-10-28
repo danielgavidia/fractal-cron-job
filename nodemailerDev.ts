@@ -6,10 +6,10 @@ dotenv.config();
 async function sendEmail(to: string, subject: string, text: string, html?: string): Promise<void> {
   // Create a transporter with your email service credentials
   const transporter = nodemailer.createTransport({
-    service: "gmail", // e.g., 'gmail' for Gmail, 'yahoo' for Yahoo, etc.
+    service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER, // Your email address
-      pass: process.env.EMAIL_PASSWORD, // Your email password or app-specific password
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
     },
     logger: true,
     debug: true,
@@ -17,11 +17,11 @@ async function sendEmail(to: string, subject: string, text: string, html?: strin
 
   // Define the email options
   const mailOptions = {
-    from: process.env.EMAIL_USER, // Sender email
-    to, // Receiver email
-    subject, // Email subject
-    text, // Plain text version of the email
-    html, // Optional: HTML version of the email
+    from: process.env.EMAIL_USER,
+    to,
+    subject,
+    text,
+    html,
   };
 
   // Send the email
