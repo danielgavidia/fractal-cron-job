@@ -1,0 +1,16 @@
+{
+  "name": "fractal-cron-job",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/node": "^22.8.1",
+    "dotenv": "^16.4.5",
+    "node-mailjet": "^6.0.6"
+  }
+}
