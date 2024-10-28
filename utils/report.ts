@@ -102,10 +102,8 @@ function formatSlackEODReport(dailySummary: DailySummary): string {
   return report;
 }
 
-async function getEODReport(username: string): Promise<string> {
+export async function getEODReport(username: string): Promise<string> {
   const dailySummary = await getDailySummary(username);
   const dailySummaryFormatted = formatSlackEODReport(dailySummary);
   return dailySummaryFormatted;
 }
-
-console.log(await getEODReport("danielgavidia"));
