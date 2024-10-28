@@ -15,6 +15,15 @@ rsync -avz --exclude 'node_modules' -e "ssh -i $KEY_PATH" "$LOCAL_DIRECTORY/" "$
 # Confirm completion
 if [[ $? -eq 0 ]]; then
   echo "Directory copied successfully to $EC2_USER@$EC2_HOST:$DESTINATION_DIRECTORY"
+  
+  # Execute chmod command remotely via SSH
+  ssh -i "$KEY_PATH" "$EC2_USER@$EC2_HOST" "chmod +x $DESTINATION_DIRECTORY/start.sh"
+  
+  if [[ $? -eq 0 ]]; then
+    echo "Permissions updated successfully for start.sh"
+  else
+    echo "Error updating permissions for start.sh"
+  fi
 else
   echo "Error copying directory."
 fi

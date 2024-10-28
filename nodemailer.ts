@@ -3,6 +3,10 @@ import nodemailer from "nodemailer";
 
 dotenv.config();
 
+console.log(process.env.ENV_PATH);
+console.log(process.env.EMAIL_USER);
+console.log(process.env.EMAIL_PASSWORD);
+
 async function sendEmail(to: string, subject: string, text: string, html?: string): Promise<void> {
   // Create a transporter with your email service credentials
   const transporter = nodemailer.createTransport({
@@ -11,6 +15,8 @@ async function sendEmail(to: string, subject: string, text: string, html?: strin
       user: process.env.EMAIL_USER, // Your email address
       pass: process.env.EMAIL_PASSWORD, // Your email password or app-specific password
     },
+    logger: true,
+    debug: true,
   });
 
   // Define the email options
