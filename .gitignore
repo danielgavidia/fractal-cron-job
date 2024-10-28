@@ -131,3 +131,4 @@ dist
 
 # nodemailer
 nodemailer.ts
+env.ts
