@@ -4,6 +4,11 @@ echo "Hello, World!"
 # Update
 sudo yum update -y
 
+# Install rsyslog
+sudo yum install rsyslog -y
+sudo systemctl start rsyslog
+sudo systemctl enable rsyslog
+
 # Cron
 sudo yum install -y cronie # install crontab
 sudo service crond start # start the cron service
