@@ -7,4 +7,8 @@ async function reportWorker(email: string, username: string, subject: string): P
   return;
 }
 
-await reportWorker("dgavidia1@gmail.com", "danielgavidia", "EOD Report");
+await reportWorker(
+  "dgavidia1@gmail.com",
+  "danielgavidia",
+  `EOD Report ${new Date().toLocaleDateString()}`
+);
