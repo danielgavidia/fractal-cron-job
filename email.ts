@@ -62,10 +62,9 @@ async function sendEmail({
 // Example usage
 async function main() {
   const emailResult = await sendEmail({
-    to: "recipient@example.com",
+    to: "dgavidia1@gmail.com",
     subject: "Test Email",
     text: "This is a test email sent from Mailjet API",
-    html: "<h3>This is a test email sent from Mailjet API</h3>",
   });
 
   console.log("Email sent:", emailResult);
