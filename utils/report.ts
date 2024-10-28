@@ -73,30 +73,30 @@ function formatSlackEODReport(dailySummary: DailySummary): string {
   const today = new Date();
   const dateStr = `${today.getMonth() + 1}/${today.getDate()}`;
 
-  let report = `EOD Status Report ${dateStr}\n\n`;
+  let report = `EOD Status Report ${dateStr}\n`;
 
   // Add Blockers section
   report += `Blockers\n`;
   if (dailySummary.qualitativeSummary.blockers) {
-    report += `• ${dailySummary.qualitativeSummary.blockers}\n`;
+    report += `-${dailySummary.qualitativeSummary.blockers}\n`;
   }
 
   // Add Learning section
-  report += `\nLearning\n`;
+  report += `Learning\n`;
   if (dailySummary.qualitativeSummary.learnings) {
-    report += `• ${dailySummary.qualitativeSummary.learnings}\n`;
+    report += `-${dailySummary.qualitativeSummary.learnings}\n`;
   }
 
   // Add Wins section
-  report += `\nWins\n`;
+  report += `Wins\n`;
   if (dailySummary.qualitativeSummary.wins) {
-    report += `• ${dailySummary.qualitativeSummary.wins}\n`;
+    report += `-${dailySummary.qualitativeSummary.wins}\n`;
   }
 
   // Add PRs section with links
-  report += `\nPRs\n`;
+  report += `PRs\n`;
   for (const pr of dailySummary.prSummaries) {
-    report += `• PR${pr.number}: ${pr.link}: ${pr.summary}\n`;
+    report += `-PR${pr.number}: ${pr.link}: ${pr.summary}\n`;
   }
 
   return report;
